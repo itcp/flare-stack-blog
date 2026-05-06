@@ -42,7 +42,7 @@ jobs:
       # === Original repo: fetch secrets from Vault ===
       - name: "[Vault] Import cloudflare secrets"
         if: github.repository == 'du2333/flare-stack-blog'
-        uses: hashicorp/vault-action@v5
+        uses: hashicorp/vault-action@v3
         with:
           url: https://vault.dukda.com
           token: ${{ secrets.VAULT_TOKEN }}
@@ -51,7 +51,7 @@ jobs:
 
       - name: "[Vault] Import runtime secrets"
         if: github.repository == 'du2333/flare-stack-blog'
-        uses: hashicorp/vault-action@v5
+        uses: hashicorp/vault-action@v3
         with:
           url: https://vault.dukda.com
           token: ${{ secrets.VAULT_TOKEN }}
